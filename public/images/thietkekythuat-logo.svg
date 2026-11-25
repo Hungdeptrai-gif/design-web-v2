@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="64" viewBox="0 0 300 64" role="img" aria-label="Thietkekythuat">
+  <!-- Mark: drafting square with a T-square and dimension tick -->
+  <rect x="2" y="4" width="56" height="56" rx="12" fill="#1e293b"/>
+  <path d="M15 19h30" stroke="#f59e0b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M30 19v27" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+  <path d="M15 49h12" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M15 45v8M27 45v8" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Wordmark -->
+  <text x="72" y="35" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="800" letter-spacing="-0.5" fill="#1e293b">Thietke<tspan fill="#b45309">kythuat</tspan></text>
+  <text x="73" y="53" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.6" fill="#78716c">ENGINEERING &amp; DESIGN</text>
+</svg>

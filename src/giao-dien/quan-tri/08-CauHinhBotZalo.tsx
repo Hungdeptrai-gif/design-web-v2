@@ -22,6 +22,8 @@ export default function CauHinhBotZalo() {
     customWebhookUrl: "",
   });
   const [botDisplayName, setBotDisplayName] = useState<string>("");
+  // The server never returns the token itself, only a hint like "…a1b2".
+  const [tokenHint, setTokenHint] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [working, setWorking] = useState<boolean>(false);
   const [detecting, setDetecting] = useState<boolean>(false);
@@ -32,7 +34,11 @@ export default function CauHinhBotZalo() {
       fetch("/api/zalo-bot", { cache: "no-store" })
         .then((r) => r.json())
         .then((data) => {
-          if (data?.config) setConfig(data.config);
+          if (data?.config) {
+            // Keep whatever token the admin is typing; the server sends an empty token.
+            setConfig((prev) => ({ ...data.config, botToken: prev.botToken }));
+            setTokenHint(data.config.tokenHint || "");
+          }
           if (data?.botProfile?.display_name) {
             setBotDisplayName(
               `${data.botProfile.display_name} (@${data.botProfile.account_name})`
@@ -60,6 +66,10 @@ export default function CauHinhBotZalo() {
         body: JSON.stringify({ action, config }),
       });
       const data = await res.json();
+      if (data?.config) {
+        setTokenHint(data.config.tokenHint || "");
+        setConfig((prev) => ({ ...prev, botToken: "" }));
+      }
       setFeedback({ ok: Boolean(data.ok), text: data.detail || "Đã xử lý." });
     } catch {
       setFeedback({ ok: false, text: "Không thể kết nối tới máy chủ cấu hình Bot." });
@@ -207,7 +217,7 @@ export default function CauHinhBotZalo() {
                 type="password"
                 value={config.botToken}
                 onChange={(e) => setConfig({ ...config, botToken: e.target.value })}
-                placeholder="Dán mã Bot Token của con Bot Zalo..."
+                placeholder={tokenHint ? `Đã lưu token (${tokenHint}). Để trống để giữ nguyên.` : "Dán mã Bot Token của con Bot Zalo..."}
                 className="w-full px-4 py-3 rounded-xl bg-[#faf8f5] border border-[#dfd9cd] text-sm font-mono text-slate-900 focus:outline-none focus:border-[#1e293b]"
               />
             </div>
@@ -322,7 +332,7 @@ export default function CauHinhBotZalo() {
             MẪU TIN NHẮN BOT SẼ BẮN VỀ ZALO CỦA BẠN
           </div>
           <pre className="text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed bg-slate-900/80 p-4 rounded-2xl border border-slate-700">
-{`🔔 PHIẾU ĐĂNG KÝ BÁO GIÁ MỚI (#PIU-2311-684)
+{`🔔 PHIẾU ĐĂNG KÝ BÁO GIÁ MỚI (#TKKT-2311-684)
 ━━━━━━━━━━━━━━━━━━
 👤 Khách hàng: Công ty Cơ điện An Phát
 📞 SĐT xác thực: 0912345678

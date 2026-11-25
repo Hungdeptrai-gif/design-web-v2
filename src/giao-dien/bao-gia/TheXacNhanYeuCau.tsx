@@ -8,12 +8,16 @@ interface TheXacNhanYeuCauProps {
   name: string;
   phone: string;
   effectiveCategory: string;
+  submitting?: boolean;
+  errorMsg?: string;
 }
 
 export default function TheXacNhanYeuCau({
   name,
   phone,
   effectiveCategory,
+  submitting = false,
+  errorMsg = "",
 }: TheXacNhanYeuCauProps) {
   return (
     <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-5">
@@ -40,12 +44,19 @@ export default function TheXacNhanYeuCau({
           </div>
         </div>
 
+        {errorMsg ? (
+          <p role="alert" className="rounded-xl bg-rose-500/15 border border-rose-400/40 px-3 py-2.5 text-xs text-rose-100">
+            {errorMsg}
+          </p>
+        ) : null}
+
         <button
           type="submit"
-          className="w-full py-4 rounded-full bg-[#b45309] hover:bg-amber-600 text-white font-bold text-sm tracking-wide shadow-lg transition flex items-center justify-center gap-2 cursor-pointer"
+          disabled={submitting}
+          className="w-full py-4 rounded-full bg-[#b45309] hover:bg-amber-600 disabled:opacity-60 disabled:cursor-wait text-white font-bold text-sm tracking-wide shadow-lg transition flex items-center justify-center gap-2 cursor-pointer"
         >
           <Send className="w-4 h-4" />
-          GỬI ĐĂNG KÝ BÁO GIÁ
+          {submitting ? "ĐANG GỬI..." : "GỬI ĐĂNG KÝ BÁO GIÁ"}
         </button>
 
         <div className="space-y-2 text-xs text-slate-300 pt-1">

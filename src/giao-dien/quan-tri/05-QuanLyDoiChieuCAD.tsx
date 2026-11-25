@@ -55,7 +55,7 @@ export default function QuanLyDoiChieuCAD({
       label: label.trim(),
       cadImage,
       renderImage,
-      dwgCode: dwgCode.trim() || "DWG-PIU-2026",
+      dwgCode: dwgCode.trim() || "DWG-TKKT-2026",
       scale: scale.trim() || "TỶ LỆ 1:20",
       dimensions: dims.length > 0 ? dims : ["Chuẩn kích thước thực tế", "Khớp mô hình 3D"],
     };

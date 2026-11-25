@@ -2,12 +2,10 @@
  * Dịch vụ kết nối Bot Zalo phía máy chủ (Lưu riêng trong data/zalo-bot-config.json để bảo mật Token).
  * Tự động lắng nghe tin nhắn kích hoạt đầu tiên để bắt Chat ID và phản hồi xác nhận ngay trên Zalo.
  */
-import { mkdir, readFile, writeFile } from "fs/promises";
-import path from "path";
+import { SITE_CONFIG } from "@/cau-hinh/thong-tin-chung";
 import { QuoteLead, ZaloBotConfig } from "@/kieu-du-lieu";
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const ZALO_CONFIG_FILE = path.join(DATA_DIR, "zalo-bot-config.json");
+import { readZaloConfig, writeZaloConfig } from "./kho-du-lieu";
 
 const DEFAULT_ZALO_CONFIG: ZaloBotConfig = {
   enabled: false,
@@ -22,19 +20,14 @@ declare global {
   var __piuZaloAutoPairRunning: boolean | undefined;
 }
 
-export interface ZaloBotInfo {
-  id: string;
-  account_name: string;
-  display_name: string;
-}
 
+/** Config from the store, with ZALO_BOT_TOKEN / ZALO_CHAT_ID env vars as fallback. */
 export async function loadZaloBotConfig(): Promise<ZaloBotConfig> {
   const envToken = process.env.ZALO_BOT_TOKEN?.trim() || "";
   const envChatId = process.env.ZALO_CHAT_ID?.trim() || "";
+  const parsed = await readZaloConfig();
 
-  try {
-    const raw = await readFile(ZALO_CONFIG_FILE, "utf-8");
-    const parsed = JSON.parse(raw) as Partial<ZaloBotConfig>;
+  if (parsed) {
     return {
       enabled: Boolean(parsed.enabled ?? Boolean(envToken)),
       mode: parsed.mode === "custom-webhook" ? "custom-webhook" : "zalo-bot-api",
@@ -42,18 +35,11 @@ export async function loadZaloBotConfig(): Promise<ZaloBotConfig> {
       chatId: parsed.chatId?.trim() || envChatId,
       customWebhookUrl: parsed.customWebhookUrl?.trim() || "",
     };
-  } catch {
-    if (envToken) {
-      return {
-        enabled: true,
-        mode: "zalo-bot-api",
-        botToken: envToken,
-        chatId: envChatId,
-        customWebhookUrl: "",
-      };
-    }
-    return DEFAULT_ZALO_CONFIG;
   }
+  if (envToken) {
+    return { enabled: true, mode: "zalo-bot-api", botToken: envToken, chatId: envChatId, customWebhookUrl: "" };
+  }
+  return DEFAULT_ZALO_CONFIG;
 }
 
 export async function saveZaloBotConfig(config: ZaloBotConfig): Promise<ZaloBotConfig> {
@@ -64,9 +50,14 @@ export async function saveZaloBotConfig(config: ZaloBotConfig): Promise<ZaloBotC
     chatId: config.chatId.trim(),
     customWebhookUrl: config.customWebhookUrl.trim(),
   };
-  await mkdir(DATA_DIR, { recursive: true });
-  await writeFile(ZALO_CONFIG_FILE, JSON.stringify(clean, null, 2), "utf-8");
+  await writeZaloConfig(clean);
   return clean;
+}
+
+export interface ZaloBotInfo {
+  id: string;
+  account_name: string;
+  display_name: string;
 }
 
 export async function fetchZaloBotProfile(botToken: string): Promise<ZaloBotInfo | null> {
@@ -129,7 +120,7 @@ export async function sendZaloBotText(
     return {
       ok: false,
       detail:
-        "Đã có Bot Token nhưng chưa nhận được Chat ID. Hãy mở Zalo nhắn chữ 'hi' vào Bot Planitup Studio để tự động kích hoạt!",
+        "Đã có Bot Token nhưng chưa nhận được Chat ID. Hãy mở Zalo nhắn chữ 'hi' vào Bot Zalo của website để tự động kích hoạt!",
     };
   }
 
@@ -237,8 +228,8 @@ export async function detectZaloBotChatId(
       await sendZaloBotText(
         updated,
         [
-          "✅ [PLANITUP STUDIO — ĐÃ KẾT NỐI BOT THÀNH CÔNG]",
-          `Xin chào${senderName ? ` ${senderName}` : ""}! Hệ thống website PlanItUp Studio đã liên kết với cuộc trò chuyện này.`,
+          `✅ [${SITE_CONFIG.brandUpper} — ĐÃ KẾT NỐI BOT THÀNH CÔNG]`,
+          `Xin chào${senderName ? ` ${senderName}` : ""}! Hệ thống website ${SITE_CONFIG.name} đã liên kết với cuộc trò chuyện này.`,
           "Từ bây giờ, hễ có khách hàng gửi phiếu đăng ký báo giá mới tại /bao-gia, thông tin sẽ báo ngay lập tức về đây!",
         ].join("\n")
       );
@@ -259,12 +250,12 @@ export async function detectZaloBotChatId(
   return {
     ok: false,
     detail:
-      "Chưa nhận được tin nhắn kích hoạt. Hãy mở Zalo nhắn chữ 'hi' vào Bot Planitup Studio!",
+      "Chưa nhận được tin nhắn kích hoạt. Hãy mở Zalo nhắn chữ 'hi' vào Bot Zalo của website!",
   };
 }
 
 /**
- * Tự động chạy ngầm chờ người dùng nhắn chữ đầu tiên vào Bot Planitup Studio (tối đa 15 phút)
+ * Tự động chạy ngầm chờ người dùng nhắn chữ đầu tiên vào Bot Zalo (tối đa 15 phút)
  * để người dùng chỉ việc mở Zalo nhắn 'hi' là tự động kích hoạt ngay mà không cần bấm nút thủ công.
  */
 export function ensureAutoPairBackgroundListener(): void {

@@ -12,15 +12,29 @@ interface ManHinhDangNhapProps {
 export default function ManHinhDangNhap({ onSuccess }: ManHinhDangNhapProps) {
   const [passwordInput, setPasswordInput] = useState<string>("");
   const [loginError, setLoginError] = useState<string>("");
+  const [submitting, setSubmitting] = useState<boolean>(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  // The PIN is checked on the server (ADMIN_PIN env var); on success it sets an httpOnly cookie.
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const trimmed = passwordInput.trim();
-    if (trimmed === SITE_CONFIG.admin.defaultPin) {
-      setLoginError("");
-      onSuccess();
-    } else {
-      setLoginError("Mật khẩu quản trị không chính xác.");
+    setSubmitting(true);
+    setLoginError("");
+    try {
+      const res = await fetch("/api/admin/session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin: passwordInput.trim() }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.authenticated) {
+        onSuccess();
+      } else {
+        setLoginError(data.error || "Mật khẩu quản trị không chính xác.");
+      }
+    } catch {
+      setLoginError("Không thể kết nối máy chủ. Vui lòng thử lại.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -61,9 +75,10 @@ export default function ManHinhDangNhap({ onSuccess }: ManHinhDangNhapProps) {
 
           <button
             type="submit"
-            className="w-full py-3.5 rounded-full bg-[#1e293b] hover:bg-slate-800 text-white font-bold text-sm transition cursor-pointer"
+            disabled={submitting}
+            className="w-full py-3.5 rounded-full bg-[#1e293b] hover:bg-slate-800 disabled:opacity-60 text-white font-bold text-sm transition cursor-pointer"
           >
-            Xác thực &amp; Vào Hệ Thống
+            {submitting ? "Đang xác thực..." : <>Xác thực &amp; Vào Hệ Thống</>}
           </button>
         </form>
 

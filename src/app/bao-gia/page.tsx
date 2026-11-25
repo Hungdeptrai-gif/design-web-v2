@@ -8,7 +8,6 @@ import { studioStorage } from "@/dich-vu-du-lieu/luu-tru";
 import ThanhMenuTrangCon from "@/giao-dien/khung-chung/ThanhMenuTrangCon";
 import {
   OTHER_CATEGORY_KEY,
-  formatExactTimestamp,
   isValidVietnamPhone,
 } from "@/giao-dien/bao-gia/xac-thuc-bieu-mau";
 import FormDangKyBaoGia from "@/giao-dien/bao-gia/FormDangKyBaoGia";
@@ -28,6 +27,7 @@ function BaoGiaContent() {
   const [errorMsg, setErrorMsg] = useState<string>("");
   const [submittedCode, setSubmittedCode] = useState<string | null>(null);
   const [submittedAt, setSubmittedAt] = useState<string>("");
+  const [submitting, setSubmitting] = useState<boolean>(false);
 
   useEffect(() => {
     const qCat = searchParams.get("category");
@@ -49,7 +49,7 @@ function BaoGiaContent() {
     OTHER_CATEGORY_KEY,
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg("");
 
@@ -72,27 +72,24 @@ function BaoGiaContent() {
       return;
     }
 
-    const now = new Date();
-    const exactTime = formatExactTimestamp(now);
-    const code = `PIU-${String(now.getDate()).padStart(2, "0")}${String(
-      now.getMonth() + 1
-    ).padStart(2, "0")}-${Math.floor(100 + Math.random() * 900)}`;
-
-    studioStorage.addQuote({
-      id: `q-${now.getTime()}`,
-      code,
+    // Only show the success screen once the server has really saved the quote.
+    setSubmitting(true);
+    const result = await studioStorage.submitQuote({
       name: trimmedName,
       phone: cleanedPhone,
       email: trimmedEmail || undefined,
       category: effectiveCategory,
       note: note.trim() || "Đăng ký tư vấn và nhận báo giá thiết kế.",
-      createdAt: exactTime,
-      status: "pending",
     });
+    setSubmitting(false);
+    if (!result.ok) {
+      setErrorMsg(result.error);
+      return;
+    }
 
     setPhone(cleanedPhone);
-    setSubmittedAt(exactTime);
-    setSubmittedCode(code);
+    setSubmittedAt(result.quote.createdAt);
+    setSubmittedCode(result.quote.code ?? result.quote.id);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -156,6 +153,8 @@ function BaoGiaContent() {
                   name={name}
                   phone={phone}
                   effectiveCategory={effectiveCategory}
+                  submitting={submitting}
+                  errorMsg={errorMsg}
                 />
               </form>
             </>

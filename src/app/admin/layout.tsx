@@ -45,8 +45,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [hydrated, setHydrated] = useState<boolean>(false);
 
   useEffect(() => {
-    setAuthenticated(studioStorage.isAdminAuthenticated());
-    setHydrated(true);
+    fetch("/api/admin/session", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data) => setAuthenticated(Boolean(data?.authenticated)))
+      .catch(() => setAuthenticated(false))
+      .finally(() => setHydrated(true));
   }, []);
 
   if (!hydrated) {
@@ -56,10 +59,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (!authenticated) {
     return (
       <ManHinhDangNhap
-        onSuccess={() => {
-          studioStorage.setAdminAuthenticated(true);
-          setAuthenticated(true);
-        }}
+        onSuccess={() => setAuthenticated(true)}
       />
     );
   }
@@ -68,8 +68,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     <AdminStudioProvider>
       <KhungNoiDungAdmin
         onLogout={() => {
-          studioStorage.setAdminAuthenticated(false);
-          setAuthenticated(false);
+          void fetch("/api/admin/session", { method: "DELETE" }).finally(() => setAuthenticated(false));
         }}
       >
         {children}

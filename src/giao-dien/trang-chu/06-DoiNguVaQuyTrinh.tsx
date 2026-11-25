@@ -1,6 +1,7 @@
 import React from "react";
 import { Settings2, Wrench, Building, Layers3 } from "lucide-react";
 import { SOFTWARE_STACK, WORKFLOW_STEPS } from "@/du-lieu-mau";
+import { SITE_CONFIG } from "@/cau-hinh/thong-tin-chung";
 
 const DEPARTMENTS = [
   {
@@ -35,7 +36,7 @@ export default function DoiNguVaQuyTrinh() {
               Đội Ngũ Kỹ Sư &amp; Kiến Trúc Sư Phối Hợp Đa Chuyên Ngành
             </h2>
             <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-              Thay vì làm việc đơn lẻ, PlanItUp Studio vận hành theo mô hình tổ hợp chuyên môn: mỗi hạng mục trong dự án đều do đúng kỹ sư chuyên ngành trực tiếp tính toán và kiểm duyệt bản vẽ trước khi bàn giao.
+              Thay vì làm việc đơn lẻ, {SITE_CONFIG.name} vận hành theo mô hình tổ hợp chuyên môn: mỗi hạng mục trong dự án đều do đúng kỹ sư chuyên ngành trực tiếp tính toán và kiểm duyệt bản vẽ trước khi bàn giao.
             </p>
 
             <div className="space-y-3 pt-2">

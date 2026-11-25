@@ -1,12 +1,13 @@
 /**
  * Tệp cấu hình tập trung toàn bộ thông tin thương hiệu & liên hệ của Studio.
- * Cần đổi SĐT, Zalo, Email, Địa chỉ, Con số thống kê hoặc Mật khẩu Admin chỉ cần sửa tại đây.
+ * Cần đổi SĐT, Zalo, Email, Địa chỉ, Con số thống kê chỉ cần sửa tại đây.
+ * Mật khẩu quản trị KHÔNG nằm ở đây: đặt biến môi trường ADMIN_PIN trên Vercel.
  */
 export const SITE_CONFIG = {
-  name: "PlanItUp Studio",
-  brandUpper: "PLANITUP STUDIO",
+  name: "Thietkekythuat",
+  brandUpper: "THIETKEKYTHUAT",
   tagline: "ENGINEERING & DESIGN",
-  logoPath: "/images/planitup-logo.png",
+  logoPath: "/images/thietkekythuat-logo.svg",
   description:
     "Đơn vị tư vấn & triển khai hồ sơ thiết kế kỹ thuật chuyên sâu: Thang máy, Hệ thống đường ống công nghiệp (Piping), Thiết bị cơ khí chế tạo, Kiến trúc – Nội thất và Dựng hình 2D/3D theo yêu cầu trên toàn quốc.",
   contact: {
@@ -24,8 +25,5 @@ export const SITE_CONFIG = {
     confidentialityRate: 100,
     maxPinnedOnHome: 4,
     archiveItemsPerPage: 6,
-  },
-  admin: {
-    defaultPin: "planitup2026",
   },
 } as const;

@@ -25,14 +25,6 @@ export default function ThanhMenuChinh() {
             alt={`${SITE_CONFIG.name} Logo`}
             className="h-11 w-auto object-contain shrink-0 group-hover:scale-[1.03] transition"
           />
-          <div className="hidden xl:block pl-3 border-l border-[#dcd6c8] whitespace-nowrap">
-            <div className="text-[11px] font-extrabold tracking-[0.18em] text-slate-900">
-              {SITE_CONFIG.brandUpper}
-            </div>
-            <div className="text-[10px] font-mono text-stone-500 tracking-wider">
-              {SITE_CONFIG.tagline}
-            </div>
-          </div>
         </a>
 
         <nav className="hidden md:flex items-center gap-1 p-1.5 rounded-full bg-white/95 border border-[#e3ded3] shadow-[0_2px_12px_rgba(28,25,23,0.04)]">

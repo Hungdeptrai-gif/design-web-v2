@@ -14,14 +14,6 @@ export default function ChanTrangLienHe() {
                 alt={SITE_CONFIG.name}
                 className="h-12 w-auto object-contain"
               />
-              <div className="pl-3 border-l border-[#d5cfc2]">
-                <div className="text-xs font-extrabold tracking-widest text-slate-900">
-                  {SITE_CONFIG.brandUpper}
-                </div>
-                <div className="text-[10px] font-mono text-stone-500">
-                  {SITE_CONFIG.tagline}
-                </div>
-              </div>
             </div>
             <p className="text-sm text-stone-600 leading-relaxed">
               {SITE_CONFIG.description}

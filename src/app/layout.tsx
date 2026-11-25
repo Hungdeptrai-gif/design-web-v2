@@ -15,11 +15,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PLANITUP STUDIO | Đội Ngũ Kỹ Sư Thiết Kế Thang Máy, Đường Ống, Cơ Khí & Kiến Trúc 3D",
+  title: "THIETKEKYTHUAT | Đội Ngũ Kỹ Sư Thiết Kế Thang Máy, Đường Ống, Cơ Khí & Kiến Trúc 3D",
   description:
-    "PlanItUp Studio — Đơn vị Tư vấn & Thiết kế Kỹ thuật đa lĩnh vực: Thang máy, Hệ thống đường ống nhà máy (Piping), Thiết bị công nghiệp, Kiến trúc – Nội thất và Dựng hình 2D/3D theo mẫu chuẩn sản xuất.",
+    "Thietkekythuat — Đơn vị Tư vấn & Thiết kế Kỹ thuật đa lĩnh vực: Thang máy, Hệ thống đường ống nhà máy (Piping), Thiết bị công nghiệp, Kiến trúc – Nội thất và Dựng hình 2D/3D theo mẫu chuẩn sản xuất.",
   openGraph: {
-    title: "PLANITUP STUDIO — Kỹ Sư Thiết Kế Thang Máy, Đường Ống & Kiến Trúc 3D",
+    title: "THIETKEKYTHUAT — Kỹ Sư Thiết Kế Thang Máy, Đường Ống & Kiến Trúc 3D",
     description:
       "Giải pháp thiết kế hồ sơ kỹ thuật 2D/3D chuẩn sản xuất: Thang máy, Đường ống nhà máy (Piping), Thiết bị cơ khí và Kiến trúc – Nội thất.",
     images: ["/images/elevator-clean-3d.jpg"],

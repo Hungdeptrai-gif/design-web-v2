@@ -105,18 +105,37 @@ export const studioStorage = {
 
   saveQuotes(quotes: QuoteLead[]): Promise<StudioSnapshot | null> {
     const clean = filterRealQuotes(quotes);
+    // Tell the server exactly which quotes were removed, so quotes that arrived
+    // meanwhile from customers are never deleted by accident.
+    const keptIds = new Set(clean.map((q) => q.id));
+    const deletedQuoteIds = this.getQuotes()
+      .map((q) => q.id)
+      .filter((id) => !keptIds.has(id));
     writeCacheSafe(STORAGE_KEYS.QUOTES, clean);
     broadcastSnapshot({ quotes: clean });
-    return persistToServer({ quotes: clean });
+    return persistToServer({ quotes: clean, deletedQuoteIds });
   },
 
-  addQuote(newLead: QuoteLead): QuoteLead[] {
-    const current = this.getQuotes();
-    const updated = [newLead, ...current];
-    writeCacheSafe(STORAGE_KEYS.QUOTES, updated);
-    broadcastSnapshot({ quotes: updated });
-    void persistToServer({ newQuote: newLead });
-    return updated;
+  /**
+   * Sends a new quote request and waits for the server to confirm it was saved.
+   * The server assigns the quote code and time.
+   */
+  async submitQuote(
+    input: Pick<QuoteLead, "name" | "phone" | "email" | "category" | "note">
+  ): Promise<{ ok: true; quote: QuoteLead } | { ok: false; error: string }> {
+    try {
+      const res = await fetch("/api/studio", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        cache: "no-store",
+        body: JSON.stringify({ newQuote: input }),
+      });
+      const data = await res.json().catch(() => null);
+      if (res.ok && data?.quote) return { ok: true, quote: data.quote as QuoteLead };
+      return { ok: false, error: data?.error || "Không thể gửi phiếu. Vui lòng thử lại." };
+    } catch {
+      return { ok: false, error: "Không có kết nối mạng. Vui lòng kiểm tra và thử lại." };
+    }
   },
 
   getVerifiedStats(): StudioVerifiedStats {
@@ -138,19 +157,5 @@ export const studioStorage = {
 
   syncFromServer(): Promise<StudioSnapshot | null> {
     return fetchLatestFromServer();
-  },
-
-  isAdminAuthenticated(): boolean {
-    if (typeof window === "undefined") return false;
-    return sessionStorage.getItem(STORAGE_KEYS.ADMIN_AUTH) === "true";
-  },
-
-  setAdminAuthenticated(status: boolean): void {
-    if (typeof window === "undefined") return;
-    if (status) {
-      sessionStorage.setItem(STORAGE_KEYS.ADMIN_AUTH, "true");
-    } else {
-      sessionStorage.removeItem(STORAGE_KEYS.ADMIN_AUTH);
-    }
   },
 };

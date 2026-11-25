@@ -1,5 +1,5 @@
 {
-  "name": "planitup-studio",
+  "name": "thietkekythuat",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/blob": "^2.9.0",
     "framer-motion": "^12.6.3",
     "lucide-react": "^0.487.0",
     "next": "^15.3.0",

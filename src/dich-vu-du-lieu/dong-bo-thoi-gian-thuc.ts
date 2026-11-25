@@ -10,18 +10,17 @@ import {
 } from "@/kieu-du-lieu";
 
 export const STORAGE_KEYS = {
-  CATEGORIES: "piu_categories_v3",
-  PROJECTS: "piu_projects_v3",
-  COMPARISONS: "piu_comparisons_v3",
-  QUOTES: "piu_quotes_v4_real",
-  VERIFIED_STATS: "piu_verified_stats_v1",
-  UPDATED_AT: "piu_updated_at_v3",
-  LEGACY_MIGRATED: "piu_migrated_legacy_v4",
-  ADMIN_AUTH: "piu_admin_auth",
+  CATEGORIES: "tkkt_categories_v1",
+  PROJECTS: "tkkt_projects_v1",
+  COMPARISONS: "tkkt_comparisons_v1",
+  QUOTES: "tkkt_quotes_v1",
+  VERIFIED_STATS: "tkkt_verified_stats_v1",
+  UPDATED_AT: "tkkt_updated_at_v1",
+  LEGACY_MIGRATED: "tkkt_migrated_legacy_v1",
 } as const;
 
-export const STUDIO_CHANNEL_NAME = "planitup_studio_realtime_v3";
-export const STUDIO_LOCAL_EVENT = "planitup-studio-local-update";
+export const STUDIO_CHANNEL_NAME = "tkkt_studio_realtime_v1";
+export const STUDIO_LOCAL_EVENT = "tkkt-studio-local-update";
 
 export interface StudioSnapshot {
   categories: string[];
@@ -90,6 +89,9 @@ export async function persistToServer(
         // Bỏ qua
       }
       return saved;
+    }
+    if (res.status === 401 && window.location.pathname.startsWith("/admin")) {
+      window.location.reload();
     }
     return null;
   } catch {
