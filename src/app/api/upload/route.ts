@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
     const uniqueName = `${Date.now()}-${baseName}${ext}`;
 
     // Vercel: store in Vercel Blob (added via Vercel → Storage).
-    if (process.env.BLOB_READ_WRITE_TOKEN) {
+    if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID) {
       const blob = await put(`uploads/${uniqueName}`, file, { access: "public", contentType });
       return NextResponse.json({ url: blob.url, fileName: file.name, size: file.size });
     }
