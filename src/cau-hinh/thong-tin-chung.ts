@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
   contact: {
     phoneDisplay: "0345.658.936",
     phoneHref: "tel:0345658936",
-    zaloUrl: "https://zalo.me/0345658936",
+    zaloUrl: "https://zalo.me/0947147858",
     email: "contact@planitupstudio.com",
     address: "Khu Đô thị Mới, Quận Cầu Giấy, TP. Hà Nội (Nhận triển khai hồ sơ toàn quốc)",
     workingHours: "Thứ 2 – Thứ 7 (08:00 – 18:00)",
