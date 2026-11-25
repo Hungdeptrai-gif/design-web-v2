@@ -10,10 +10,10 @@ export const SITE_CONFIG = {
   description:
     "Đơn vị tư vấn & triển khai hồ sơ thiết kế kỹ thuật chuyên sâu: Thang máy, Hệ thống đường ống công nghiệp (Piping), Thiết bị cơ khí chế tạo, Kiến trúc – Nội thất và Dựng hình 2D/3D theo yêu cầu trên toàn quốc.",
   contact: {
-    phoneDisplay: "0345.658.936",
-    phoneHref: "tel:0345658936",
+    phoneDisplay: "0947.147.858",
+    phoneHref: "tel:0947147858",
     zaloUrl: "https://zalo.me/0947147858",
-    email: "contact@planitupstudio.com",
+    email: "planitupz@gmail.com",
     address: "Khu Đô thị Mới, Quận Cầu Giấy, TP. Hà Nội (Nhận triển khai hồ sơ toàn quốc)",
     workingHours: "Thứ 2 – Thứ 7 (08:00 – 18:00)",
   },
