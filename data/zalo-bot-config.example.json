@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "mode": "zalo-bot-api",
+  "botToken": "",
+  "chatId": "",
+  "customWebhookUrl": ""
+}

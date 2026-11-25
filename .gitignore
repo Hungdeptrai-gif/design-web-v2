@@ -1,0 +1,20 @@
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# environment variables and secrets
+.env*
+!.env.example
+# Zalo bot token is stored here at runtime: never commit it.
+/data/zalo-bot-config.json
+
+# logs and OS files
+npm-debug.log*
+.DS_Store
+.vercel

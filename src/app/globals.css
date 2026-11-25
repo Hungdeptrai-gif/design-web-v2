@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #faf8f5;
+    color: #1c1917;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+.bg-cad-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(30, 41, 59, 0.048) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.048) 1px, transparent 1px);
+}
+
+.mask-grid-fade {
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 100%);
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}

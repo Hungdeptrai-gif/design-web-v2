@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <pattern id="isoGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5dfd3" stroke-width="0.6" />
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#fcfbf8" />
+  <rect x="28" y="28" width="1544" height="944" fill="url(#isoGrid)" />
+  <rect x="20" y="20" width="1560" height="960" fill="none" stroke="#0f172a" stroke-width="2.5" />
+  <rect x="32" y="32" width="1536" height="936" fill="none" stroke="#1e293b" stroke-width="1.2" />
+
+  <!-- North Arrow (Isometric Piping Standard) -->
+  <g transform="translate(95, 95)">
+    <polygon points="0,35 65,0 50,28" fill="#0f172a" />
+    <line x1="0" y1="35" x2="65" y2="0" stroke="#0f172a" stroke-width="2.4" />
+    <text x="72" y="8" font-family="monospace" font-size="16" font-weight="bold" fill="#b45309">BẮC (N)</text>
+    <text x="0" y="58" font-family="monospace" font-size="13" font-weight="bold" fill="#0f172a">BẢN VẼ ISOMETRIC TUYẾN ỐNG HƠI NÓNG DN150 — ASME B31.3</text>
+  </g>
+
+  <!-- ==================== ISOMETRIC PIPING SPOOL DIAGRAM (LEFT-CENTER) ==================== -->
+  <g transform="translate(80, 140)">
+    <!-- Pump Nozzle Tie-in Point TP-01 -->
+    <ellipse cx="140" cy="590" rx="28" ry="12" fill="#e2e8f0" stroke="#0f172a" stroke-width="2.2" />
+    <text x="60" y="625" font-family="monospace" font-size="11.5" font-weight="bold" fill="#0f172a">ĐẦU CHỜ BƠM TP-01 (EL. +650)</text>
+
+    <!-- Main 3D Isometric Pipe Route (Thick Navy Line) -->
+    <!-- Vertical riser from pump -> 90 elbow -> NE run -> Gate Valve -> Vertical up -> Manifold SE run -> Globe Valve -> Vessel -->
+    <polyline
+      points="140,590 140,340 460,165 460,85 810,275 810,495 975,405"
+      fill="none"
+      stroke="#0f172a"
+      stroke-width="5.5"
+      stroke-linejoin="round"
+    />
+
+    <!-- Bypass Control Loop -->
+    <polyline
+      points="540,129 540,42 725,142 725,229"
+      fill="none"
+      stroke="#0284c7"
+      stroke-width="3"
+      stroke-linejoin="round"
+    />
+
+    <!-- Flanges & Valves Symbols -->
+    <!-- Flange pair + Gate Valve on NE Run -->
+    <g transform="translate(300, 252) rotate(-28.6)">
+      <line x1="-26" y1="-16" x2="-26" y2="16" stroke="#0f172a" stroke-width="3" />
+      <polygon points="-22,-14 0,0 -22,14" fill="#ffffff" stroke="#b45309" stroke-width="2.2" />
+      <polygon points="22,-14 0,0 22,14" fill="#ffffff" stroke="#b45309" stroke-width="2.2" />
+      <line x1="0" y1="0" x2="0" y2="-28" stroke="#b45309" stroke-width="2.2" />
+      <line x1="-14" y1="-28" x2="14" y2="-28" stroke="#b45309" stroke-width="3" />
+      <line x1="26" y1="-16" x2="26" y2="16" stroke="#0f172a" stroke-width="3" />
+    </g>
+
+    <!-- Control Valve on Main Header -->
+    <g transform="translate(635, 180) rotate(28.5)">
+      <polygon points="-22,-14 0,0 -22,14" fill="#fef3c7" stroke="#0f172a" stroke-width="2.2" />
+      <polygon points="22,-14 0,0 22,14" fill="#fef3c7" stroke="#0f172a" stroke-width="2.2" />
+      <line x1="0" y1="0" x2="0" y2="-26" stroke="#0f172a" stroke-width="2.2" />
+      <path d="M -18 -26 A 18 12 0 0 1 18 -26 Z" fill="#b45309" stroke="#0f172a" stroke-width="1.8" />
+    </g>
+
+    <!-- Weld Dots & Weld Numbers (W-01 .. W-05) -->
+    <g fill="#dc2626">
+      <circle cx="140" cy="340" r="5" />
+      <circle cx="460" cy="165" r="5" />
+      <circle cx="460" cy="85" r="5" />
+      <circle cx="810" cy="275" r="5" />
+      <circle cx="810" cy="495" r="5" />
+    </g>
+
+    <!-- Spool Callouts & Elevation Tags -->
+    <g font-family="monospace" font-size="11" font-weight="bold">
+      <rect x="35" y="445" width="88" height="24" rx="3" fill="#ffffff" stroke="#0f172a" />
+      <text x="79" y="461" text-anchor="middle" fill="#0f172a">L = 2200 mm</text>
+
+      <rect x="215" y="160" width="135" height="24" rx="3" fill="#ffffff" stroke="#b45309" />
+      <text x="282" y="176" text-anchor="middle" fill="#b45309">VAN CỔNG GV-101</text>
+
+      <rect x="575" y="10" width="165" height="24" rx="3" fill="#ffffff" stroke="#0284c7" />
+      <text x="657" y="26" text-anchor="middle" fill="#0284c7">TUYẾN BYPASS DN80</text>
+
+      <rect x="482" y="55" width="118" height="24" rx="3" fill="#1e293b" />
+      <text x="541" y="71" text-anchor="middle" fill="#fbbf24">EL. +2850 mm</text>
+
+      <rect x="615" y="228" width="165" height="24" rx="3" fill="#ffffff" stroke="#0f172a" />
+      <text x="697" y="244" text-anchor="middle" fill="#0f172a">VAN ĐIỀU ÁP PCV-204</text>
+
+      <rect x="830" y="365" width="140" height="24" rx="3" fill="#ffffff" stroke="#0f172a" />
+      <text x="900" y="381" text-anchor="middle" fill="#0f172a">ỐNG SUS316L SCH40</text>
+    </g>
+
+    <!-- End Tie-in Heat Exchanger -->
+    <rect x="975" y="355" width="65" height="110" rx="8" fill="#e2e8f0" stroke="#0f172a" stroke-width="2.2" />
+    <text x="955" y="492" font-family="monospace" font-size="11.5" font-weight="bold" fill="#0f172a">BÌNH TRAO ĐỔI NHIỆT E-201</text>
+  </g>
+
+  <!-- ==================== MTO BILL OF MATERIALS TABLE (RIGHT TOP) ==================== -->
+  <g transform="translate(1110, 75)">
+    <rect x="0" y="0" width="438" height="390" fill="#ffffff" stroke="#0f172a" stroke-width="2" />
+    <rect x="0" y="0" width="438" height="36" fill="#1e293b" />
+    <text x="219" y="23" font-family="monospace" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      BẢNG BÓC TÁCH VẬT TƯ ỐNG (PIPING MTO)
+    </text>
+
+    <g font-family="monospace" font-size="10.5" font-weight="bold" fill="#b45309">
+      <line x1="0" y1="66" x2="438" y2="66" stroke="#0f172a" stroke-width="1.2" />
+      <text x="14" y="55">MÃ</text><text x="62" y="55">QUY CÁCH VẬT TƯ</text><text x="305" y="55">CỠ</text><text x="378" y="55">SL</text>
+    </g>
+
+    <g font-family="monospace" font-size="10.5" fill="#0f172a">
+      <line x1="0" y1="104" x2="438" y2="104" stroke="#cbd5e1" />
+      <text x="14" y="90">P01</text><text x="62" y="90">Ống đúc Inox SUS316L SCH40</text><text x="305" y="90">DN150</text><text x="375" y="90">14.6m</text>
+
+      <line x1="0" y1="142" x2="438" y2="142" stroke="#cbd5e1" />
+      <text x="14" y="128">P02</text><text x="62" y="128">Ống nhánh Bypass SUS316L</text><text x="305" y="128">DN80</text><text x="375" y="128">4.2m</text>
+
+      <line x1="0" y1="180" x2="438" y2="180" stroke="#cbd5e1" />
+      <text x="14" y="166">F01</text><text x="62" y="166">Cút hàn 90° LR ASME B16.9</text><text x="305" y="166">DN150</text><text x="375" y="166">05 cái</text>
+
+      <line x1="0" y1="218" x2="438" y2="218" stroke="#cbd5e1" />
+      <text x="14" y="204">F02</text><text x="62" y="204">Mặt bích cổ hàn WN JIS 10K</text><text x="305" y="204">DN150</text><text x="375" y="204">08 cái</text>
+
+      <line x1="0" y1="256" x2="438" y2="256" stroke="#cbd5e1" />
+      <text x="14" y="242">V01</text><text x="62" y="242">Van cổng tay quay mặt bích</text><text x="305" y="242">DN150</text><text x="375" y="242">02 bộ</text>
+
+      <line x1="0" y1="294" x2="438" y2="294" stroke="#cbd5e1" />
+      <text x="14" y="280">V02</text><text x="62" y="280">Van điều áp hơi tự động</text><text x="305" y="280">DN150</text><text x="375" y="280">01 bộ</text>
+
+      <line x1="0" y1="332" x2="438" y2="332" stroke="#cbd5e1" />
+      <text x="14" y="318">S01</text><text x="62" y="318">Giá đỡ ống U-Bolt + Đế trượt</text><text x="305" y="318">DN150</text><text x="375" y="318">06 bộ</text>
+
+      <text x="14" y="365" font-weight="bold" fill="#047857">KIỂM TRA VA CHẠM 3D NAVISWORKS: 0 XUNG ĐỘT</text>
+    </g>
+  </g>
+
+  <!-- ==================== SPOOL CUT LIST (BOTTOM-LEFT) ==================== -->
+  <g transform="translate(80, 790)">
+    <rect x="0" y="0" width="900" height="178" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+    <text x="20" y="30" font-family="monospace" font-size="12.5" font-weight="bold" fill="#0f172a">
+      THÔNG SỐ THỬ ÁP &amp; TIÊU CHUẨN HÀN ỐNG TẠI XƯỞNG (SPOOL FABRICATION):
+    </text>
+    <g font-family="monospace" font-size="11" fill="#334155">
+      <text x="20" y="60">• Áp suất làm việc thiết kế: PN16 (16 Bar)  |  Nhiệt độ vận hành: 195°C  |  Áp suất thử thủy lực: 24 Bar.</text>
+      <text x="20" y="88">• Phương pháp hàn: Hàn TIG lót chân khí Argon 99.99% (GTAW), chụp X-Quang mối hàn (RT 10%).</text>
+      <text x="20" y="116">• Độ dốc thoát nước ngưng tuyến chính: i = 0.003 về phía bẫy hơi ST-02.</text>
+      <text x="20" y="148" font-weight="bold" fill="#b45309">• Hồ sơ xuất trực tiếp từ mô hình AutoCAD Plant 3D — cắt sẵn từng đoạn Spool tại xưởng.</text>
+    </g>
+  </g>
+
+  <!-- ==================== KHUNG TÊN BẢN VẼ CHUẨN ISO (BOTTOM-RIGHT) ==================== -->
+  <g transform="translate(1020, 790)">
+    <rect x="0" y="0" width="548" height="178" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
+    <line x1="0" y1="46" x2="548" y2="46" stroke="#0f172a" stroke-width="1.4" />
+    <line x1="0" y1="96" x2="548" y2="96" stroke="#0f172a" stroke-width="1.4" />
+    <line x1="0" y1="138" x2="548" y2="138" stroke="#0f172a" stroke-width="1.4" />
+    <line x1="340" y1="0" x2="340" y2="178" stroke="#0f172a" stroke-width="1.4" />
+
+    <text x="16" y="29" font-family="monospace" font-size="14" font-weight="bold" fill="#0f172a">ĐƠN VỊ THIẾT KẾ: PLANITUP STUDIO</text>
+    <text x="354" y="29" font-family="monospace" font-size="12" font-weight="bold" fill="#b45309">HOTLINE: 0345.658.936</text>
+
+    <text x="16" y="68" font-family="monospace" font-size="11" fill="#475569">TUYẾN ỐNG CÔNG NGHỆ:</text>
+    <text x="16" y="87" font-family="monospace" font-size="12.5" font-weight="bold" fill="#0f172a">STM-DN150-316L-PN16 (TRẠM TRAO ĐỔI NHIỆT)</text>
+    <text x="354" y="68" font-family="monospace" font-size="11" fill="#475569">PHẦN MỀM GỐC:</text>
+    <text x="354" y="87" font-family="monospace" font-size="12" font-weight="bold" fill="#0f172a">AUTOCAD PLANT 3D</text>
+
+    <text x="16" y="122" font-family="monospace" font-size="11.5" fill="#1e293b">CHUẨN: <tspan font-weight="bold">ASME B31.3</tspan>   |   KHỔ GIẤY: <tspan font-weight="bold">A2 ISO</tspan></text>
+    <text x="354" y="122" font-family="monospace" font-size="12" font-weight="bold" fill="#0f172a">TỜ SỐ: 01 / 01</text>
+
+    <text x="16" y="163" font-family="monospace" font-size="12" font-weight="bold" fill="#0f172a">MÃ BẢN VẼ: ISO-PIP-ASME-B31.3</text>
+    <text x="354" y="163" font-family="monospace" font-size="12" font-weight="bold" fill="#047857">ISSUED FOR FAB</text>
+  </g>
+</svg>

@@ -1,0 +1,304 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <defs>
+    <pattern id="gridMinor" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e5dfd3" stroke-width="0.6" />
+    </pattern>
+    <pattern id="gridMajor" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="url(#gridMinor)" />
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#d4ccc0" stroke-width="1" />
+    </pattern>
+    <pattern id="concreteHatch" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="16" stroke="#64748b" stroke-width="1.2" />
+      <circle cx="8" cy="8" r="1" fill="#64748b" />
+    </pattern>
+    <pattern id="steelHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#1e293b" stroke-width="1" />
+    </pattern>
+    <marker id="arrowStart" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 10 1 L 1 5 L 10 9 z" fill="#0f172a" />
+    </marker>
+    <marker id="arrowEnd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#0f172a" />
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#b45309" />
+    </marker>
+  </defs>
+
+  <!-- Drawing Sheet Paper -->
+  <rect width="1600" height="1000" fill="#fcfbf8" />
+  <rect x="28" y="28" width="1544" height="944" fill="url(#gridMajor)" />
+
+  <!-- Outer & Inner ISO A1 Drawing Frame -->
+  <rect x="20" y="20" width="1560" height="960" fill="none" stroke="#0f172a" stroke-width="2.5" />
+  <rect x="32" y="32" width="1536" height="936" fill="none" stroke="#1e293b" stroke-width="1.2" />
+
+  <!-- Coordinate Frame Labels (A-F, 1-8) -->
+  <g font-family="monospace" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">
+    <text x="200" y="16">1</text><text x="400" y="16">2</text><text x="600" y="16">3</text>
+    <text x="800" y="16">4</text><text x="1000" y="16">5</text><text x="1200" y="16">6</text><text x="1400" y="16">7</text>
+    <text x="12" y="160">A</text><text x="12" y="340">B</text><text x="12" y="520">C</text>
+    <text x="12" y="700">D</text><text x="12" y="880">E</text>
+  </g>
+
+  <!-- ==================== VIEW 1: MẶT BẰNG HỐ THANG & CABIN (TOP-LEFT) ==================== -->
+  <g transform="translate(85, 85)">
+    <text x="235" y="-18" font-family="monospace" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      MẶT BẰNG BỐ TRÍ HỐ THANG &amp; CABIN KÍNH (TL 1:15)
+    </text>
+    <line x1="65" y1="-10" x2="405" y2="-10" stroke="#b45309" stroke-width="1.8" />
+
+    <!-- Concrete Shaft Walls (1850 x 1800) -->
+    <rect x="40" y="40" width="390" height="380" fill="url(#concreteHatch)" stroke="#0f172a" stroke-width="2.4" />
+    <rect x="70" y="70" width="330" height="320" fill="#fcfbf8" stroke="#0f172a" stroke-width="2.2" />
+
+    <!-- Centerlines -->
+    <line x1="20" y1="230" x2="450" y2="230" stroke="#b45309" stroke-width="1" stroke-dasharray="22 5 4 5" />
+    <line x1="235" y1="20" x2="235" y2="445" stroke="#b45309" stroke-width="1" stroke-dasharray="22 5 4 5" />
+
+    <!-- Counterweight Rear Assembly (Đối trọng phía sau) -->
+    <rect x="135" y="78" width="200" height="34" fill="url(#steelHatch)" stroke="#0f172a" stroke-width="1.8" />
+    <rect x="120" y="83" width="15" height="24" fill="#1e293b" />
+    <rect x="335" y="83" width="15" height="24" fill="#1e293b" />
+    <text x="235" y="100" font-family="monospace" font-size="10" font-weight="bold" fill="#0f172a" text-anchor="middle" stroke="#fcfbf8" stroke-width="3" paint-order="stroke">
+      CỤM ĐỐI TRỌNG (CWT 945KG)
+    </text>
+
+    <!-- Cabin Main Frame (1400 x 1350) -->
+    <rect x="98" y="128" width="274" height="232" fill="#f8fafc" stroke="#0f172a" stroke-width="2.4" />
+    <!-- Tempered Glass Side Walls (Double line 10mm) -->
+    <rect x="105" y="135" width="260" height="218" fill="none" stroke="#0284c7" stroke-width="1.6" />
+    <!-- Diagonal Floor Stone Pattern -->
+    <line x1="105" y1="135" x2="365" y2="353" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="6 4" />
+    <line x1="365" y1="135" x2="105" y2="353" stroke="#cbd5e1" stroke-width="0.9" stroke-dasharray="6 4" />
+
+    <!-- Main Guide Rails T78x54x10 (Left & Right) -->
+    <path d="M 70 220 H 88 V 214 H 95 V 246 H 88 V 240 H 70 Z" fill="#0f172a" />
+    <path d="M 400 220 H 382 V 214 H 375 V 246 H 382 V 240 H 400 Z" fill="#0f172a" />
+
+    <!-- Center-Opening 2-Panel Sliding Doors (CO-800) -->
+    <rect x="70" y="362" width="330" height="26" fill="#fcfbf8" stroke="#0f172a" stroke-width="1.6" />
+    <rect x="145" y="366" width="88" height="8" fill="#1e293b" />
+    <rect x="237" y="366" width="88" height="8" fill="#1e293b" />
+    <line x1="145" y1="380" x2="98" y2="380" stroke="#b45309" stroke-width="1.4" marker-end="url(#arrowAmber)" />
+    <line x1="325" y1="380" x2="372" y2="380" stroke="#b45309" stroke-width="1.4" marker-end="url(#arrowAmber)" />
+
+    <!-- Cabin Center Spec Label -->
+    <rect x="155" y="206" width="160" height="48" rx="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.2" />
+    <text x="235" y="225" font-family="monospace" font-size="11.5" font-weight="bold" fill="#0f172a" text-anchor="middle">CABIN PANORAMA</text>
+    <text x="235" y="243" font-family="monospace" font-size="10.5" fill="#b45309" font-weight="bold" text-anchor="middle">1400W × 1350D (630KG)</text>
+
+    <!-- Detail Callout Circle B -->
+    <circle cx="102" cy="132" r="22" fill="none" stroke="#b45309" stroke-width="1.8" stroke-dasharray="5 3" />
+    <line x1="85" y1="115" x2="45" y2="15" stroke="#b45309" stroke-width="1.4" />
+    <rect x="0" y="-2" width="88" height="22" rx="3" fill="#b45309" />
+    <text x="44" y="13" font-family="monospace" font-size="10.5" font-weight="bold" fill="#ffffff" text-anchor="middle">CHI TIẾT B</text>
+
+    <!-- Dimensions: Shaft Width & Cabin Width -->
+    <line x1="70" y1="452" x2="400" y2="452" stroke="#0f172a" stroke-width="1.3" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)" />
+    <line x1="70" y1="390" x2="70" y2="462" stroke="#475569" stroke-width="0.9" />
+    <line x1="400" y1="390" x2="400" y2="462" stroke="#475569" stroke-width="0.9" />
+    <rect x="165" y="440" width="140" height="22" fill="#fcfbf8" stroke="#0f172a" stroke-width="1" />
+    <text x="235" y="455" font-family="monospace" font-size="11.5" font-weight="bold" fill="#0f172a" text-anchor="middle">1850 (LỌT LÒNG HỐ)</text>
+
+    <line x1="98" y1="422" x2="372" y2="422" stroke="#0f172a" stroke-width="1.2" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)" />
+    <line x1="98" y1="360" x2="98" y2="430" stroke="#475569" stroke-width="0.8" />
+    <line x1="372" y1="360" x2="372" y2="430" stroke="#475569" stroke-width="0.8" />
+    <text x="235" y="417" font-family="monospace" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">1400 ± 0.5 (RỘNG CABIN)</text>
+
+    <!-- Vertical Depth Dimension -->
+    <line x1="448" y1="70" x2="448" y2="390" stroke="#0f172a" stroke-width="1.3" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)" />
+    <line x1="400" y1="70" x2="458" y2="70" stroke="#475569" stroke-width="0.9" />
+    <line x1="400" y1="390" x2="458" y2="390" stroke="#475569" stroke-width="0.9" />
+    <g transform="translate(465, 230) rotate(-90)">
+      <text x="0" y="0" font-family="monospace" font-size="11.5" font-weight="bold" fill="#0f172a" text-anchor="middle">1800 (SÂU HỐ THANG)</text>
+    </g>
+
+    <!-- Door Opening Dimension -->
+    <text x="235" y="485" font-family="monospace" font-size="11" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      CỬA TIM 2 CÁNH CO-800 × 2100H (INOX GƯƠNG VÀNG PVD)
+    </text>
+  </g>
+
+  <!-- ==================== VIEW 2: MẶT CẮT ĐỨNG A-A CABIN & KHUNG TREO (CENTER) ==================== -->
+  <g transform="translate(620, 85)">
+    <text x="230" y="-18" font-family="monospace" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      MẶT CẮT ĐỨNG A-A: KHUNG CƠ KHÍ &amp; CABIN (TL 1:15)
+    </text>
+    <line x1="45" y1="-10" x2="415" y2="-10" stroke="#b45309" stroke-width="1.8" />
+
+    <!-- Centerline -->
+    <line x1="230" y1="10" x2="230" y2="740" stroke="#b45309" stroke-width="1" stroke-dasharray="24 6 4 6" />
+
+    <!-- Top Traction Sheave & Rope Suspension -->
+    <circle cx="230" cy="65" r="34" fill="#f1f5f9" stroke="#0f172a" stroke-width="2.2" />
+    <circle cx="230" cy="65" r="10" fill="#0f172a" />
+    <line x1="212" y1="98" x2="212" y2="155" stroke="#0f172a" stroke-width="2" />
+    <line x1="230" y1="99" x2="230" y2="155" stroke="#0f172a" stroke-width="2" />
+    <line x1="248" y1="98" x2="248" y2="155" stroke="#0f172a" stroke-width="2" />
+    <text x="280" y="62" font-family="monospace" font-size="10.5" font-weight="bold" fill="#0f172a">PULY MÁY KÉO Ø400</text>
+    <text x="280" y="78" font-family="monospace" font-size="10" fill="#475569">4× CÁP THÉP Ø10mm</text>
+
+    <!-- Upper Crosshead Beam (Dầm ngang đỉnh khung treo U160) -->
+    <rect x="75" y="155" width="310" height="28" fill="url(#steelHatch)" stroke="#0f172a" stroke-width="2.2" />
+    <!-- Guide Shoes Upper -->
+    <rect x="58" y="140" width="17" height="48" fill="#1e293b" />
+    <rect x="385" y="140" width="17" height="48" fill="#1e293b" />
+
+    <!-- Vertical Uprights (Kiếm dọc khung cabin) -->
+    <rect x="75" y="183" width="14" height="425" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.8" />
+    <rect x="371" y="183" width="14" height="425" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.8" />
+
+    <!-- Cabin Roof & Recessed LED Ceiling -->
+    <rect x="96" y="198" width="268" height="22" fill="#e2e8f0" stroke="#0f172a" stroke-width="2" />
+    <rect x="130" y="220" width="200" height="12" fill="#fef3c7" stroke="#b45309" stroke-width="1.4" />
+    <text x="230" y="213" font-family="monospace" font-size="9.5" font-weight="bold" fill="#0f172a" text-anchor="middle">TRẦN INOX CHẤN CNC + LED HẮT</text>
+
+    <!-- Cabin Interior Body (H = 2450mm) -->
+    <rect x="96" y="220" width="268" height="356" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
+    <!-- Panoramic Glass Panels + Mullions -->
+    <rect x="108" y="234" width="76" height="328" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.3" />
+    <rect x="192" y="234" width="76" height="328" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.3" />
+    <rect x="276" y="234" width="76" height="328" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.3" />
+
+    <!-- Stainless Handrail at H=900mm -->
+    <rect x="106" y="442" width="248" height="9" rx="4" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.5" />
+    <text x="230" y="435" font-family="monospace" font-size="10" font-weight="bold" fill="#334155" text-anchor="middle">TAY VỊN INOX Ø38 (CAO +900)</text>
+
+    <!-- COP Control Panel -->
+    <rect x="302" y="315" width="26" height="105" rx="2" fill="#1e293b" />
+    <rect x="306" y="322" width="18" height="24" fill="#38bdf8" />
+
+    <!-- Marble + Steel Platform Floor (Sàn đá Granite 20mm + Khung gầm) -->
+    <rect x="92" y="576" width="276" height="16" fill="url(#concreteHatch)" stroke="#0f172a" stroke-width="1.8" />
+    <rect x="75" y="592" width="310" height="30" fill="url(#steelHatch)" stroke="#0f172a" stroke-width="2.2" />
+    <!-- Safety Gear & Lower Guide Shoes -->
+    <rect x="58" y="586" width="17" height="52" fill="#b45309" />
+    <rect x="385" y="586" width="17" height="52" fill="#b45309" />
+
+    <!-- Pit Polyurethane Buffers & Pit Floor -->
+    <line x1="25" y1="705" x2="435" y2="705" stroke="#0f172a" stroke-width="3" />
+    <rect x="25" y="705" width="410" height="26" fill="url(#concreteHatch)" stroke="#0f172a" stroke-width="1.4" />
+    <rect x="145" y="655" width="26" height="50" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.6" />
+    <rect x="289" y="655" width="26" height="50" fill="#cbd5e1" stroke="#0f172a" stroke-width="1.6" />
+    <text x="230" y="685" font-family="monospace" font-size="10.5" font-weight="bold" fill="#0f172a" text-anchor="middle">GIẢM CHẤN ĐÁY HỐ PIT (H=450mm)</text>
+
+    <!-- Vertical Elevation Dimensions -->
+    <line x1="28" y1="220" x2="28" y2="576" stroke="#0f172a" stroke-width="1.4" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)" />
+    <line x1="20" y1="220" x2="96" y2="220" stroke="#475569" stroke-width="0.8" />
+    <line x1="20" y1="576" x2="96" y2="576" stroke="#475569" stroke-width="0.8" />
+    <g transform="translate(15, 398) rotate(-90)">
+      <text x="0" y="0" font-family="monospace" font-size="11.5" font-weight="bold" fill="#b45309" text-anchor="middle">H CABIN = 2450 ± 1.0</text>
+    </g>
+
+    <line x1="432" y1="155" x2="432" y2="622" stroke="#0f172a" stroke-width="1.4" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)" />
+    <line x1="385" y1="155" x2="442" y2="155" stroke="#475569" stroke-width="0.8" />
+    <line x1="385" y1="622" x2="442" y2="622" stroke="#475569" stroke-width="0.8" />
+    <g transform="translate(450, 388) rotate(-90)">
+      <text x="0" y="0" font-family="monospace" font-size="11.5" font-weight="bold" fill="#0f172a" text-anchor="middle">KHUNG TREO TỔNG = 2860 mm</text>
+    </g>
+  </g>
+
+  <!-- ==================== VIEW 3: CHI TIẾT B (GÓC LIÊNẾT KÍNH & INOX CHẤN CNC - RIGHT TOP) ==================== -->
+  <g transform="translate(1135, 85)">
+    <rect x="0" y="-32" width="405" height="335" rx="6" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+    <rect x="0" y="-32" width="405" height="34" fill="#1e293b" />
+    <text x="202" y="-10" font-family="monospace" font-size="12.5" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      CHI TIẾT B — GÓC VÁCH INOX CHẤN CNC (TL 1:2)
+    </text>
+
+    <!-- Sheet Metal Bent Profile 1.5mm SUS304 -->
+    <path d="M 75 60 H 195 V 135 H 270 V 235 H 254 V 151 H 179 V 76 H 75 Z" fill="url(#steelHatch)" stroke="#0f172a" stroke-width="2.2" />
+    <!-- Tempered Glass 10mm + EPDM Gasket -->
+    <rect x="55" y="84" width="116" height="24" fill="#bae6fd" stroke="#0284c7" stroke-width="1.8" />
+    <rect x="165" y="76" width="14" height="40" fill="#1e293b" />
+    <!-- Concealed M8 Stud & Locknut -->
+    <rect x="218" y="102" width="12" height="48" fill="#b45309" stroke="#0f172a" stroke-width="1.2" />
+    <rect x="210" y="94" width="28" height="10" fill="#0f172a" />
+
+    <!-- Callouts inside Detail B -->
+    <text x="60" y="48" font-family="monospace" font-size="10.5" font-weight="bold" fill="#0f172a">INOX SUS304 DÀY 1.5mm (CHẤN R1.5)</text>
+    <text x="55" y="132" font-family="monospace" font-size="10.5" font-weight="bold" fill="#0284c7">KÍNH CƯỜNG LỰC AN TOÀN 10mm</text>
+    <text x="190" y="268" font-family="monospace" font-size="10.5" font-weight="bold" fill="#b45309">BULÔNG ÂM M8×25 (GIẤU VÍT 100%)</text>
+    <text x="55" y="288" font-family="monospace" font-size="10" fill="#475569">DUNG SAI CHẤN CNC: ±0.1mm | KHE RON EPDM KÍN KHÍT</text>
+  </g>
+
+  <!-- ==================== VIEW 4: BẢNG KÊ VẬT TƯ CƠ KHÍ CHÍNH (BOM TABLE - RIGHT MIDDLE) ==================== -->
+  <g transform="translate(1135, 425)">
+    <rect x="0" y="0" width="405" height="260" fill="#ffffff" stroke="#0f172a" stroke-width="1.8" />
+    <rect x="0" y="0" width="405" height="32" fill="#f3efe8" stroke="#0f172a" stroke-width="1.4" />
+    <text x="202" y="21" font-family="monospace" font-size="12" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      BẢNG BÓC TÁCH VẬT TƯ CHÍNH (BOM CƠ KHÍ)
+    </text>
+
+    <!-- Table Headers -->
+    <g font-family="monospace" font-size="10" font-weight="bold" fill="#1e293b">
+      <line x1="0" y1="58" x2="405" y2="58" stroke="#0f172a" stroke-width="1.2" />
+      <text x="12" y="49">STT</text>
+      <text x="50" y="49">TÊN CHI TIẾT GIA CÔNG</text>
+      <text x="245" y="49">VẬT LIỆU</text>
+      <text x="355" y="49">SL</text>
+    </g>
+
+    <!-- Table Rows -->
+    <g font-family="monospace" font-size="10" fill="#0f172a">
+      <line x1="0" y1="90" x2="405" y2="90" stroke="#cbd5e1" />
+      <text x="14" y="79">01</text><text x="50" y="79">Dầm ngang khung treo U160×6</text><text x="245" y="79">SS400 Mạ kẽm</text><text x="360" y="79">02</text>
+
+      <line x1="0" y1="122" x2="405" y2="122" stroke="#cbd5e1" />
+      <text x="14" y="111">02</text><text x="50" y="111">Kiếm dọc chịu lực 2450L</text><text x="245" y="111">SS400 t=5.0</text><text x="360" y="111">02</text>
+
+      <line x1="0" y1="154" x2="405" y2="154" stroke="#cbd5e1" />
+      <text x="14" y="143">03</text><text x="50" y="143">Cột góc Cabin chấn CNC</text><text x="245" y="143">SUS304 PVD 1.5</text><text x="360" y="143">04</text>
+
+      <line x1="0" y1="186" x2="405" y2="186" stroke="#cbd5e1" />
+      <text x="14" y="175">04</text><text x="50" y="175">Vách kính cường lực Panorama</text><text x="245" y="175">Tempered 10mm</text><text x="360" y="175">03</text>
+
+      <line x1="0" y1="218" x2="405" y2="218" stroke="#cbd5e1" />
+      <text x="14" y="207">05</text><text x="50" y="207">Ray dẫn hướng Cabin + CWT</text><text x="245" y="207">Thép T78×54×10</text><text x="360" y="207">04</text>
+
+      <text x="14" y="242">06</text><text x="50" y="242">Khung sàn đá Granite tự nhiên</text><text x="245" y="242">SS400 + Đá 20</text><text x="360" y="242">01</text>
+    </g>
+  </g>
+
+  <!-- ==================== GHI CHÚ KỸ THUẬT GIA CÔNG (BOTTOM-LEFT) ==================== -->
+  <g transform="translate(85, 650)">
+    <rect x="0" y="0" width="490" height="275" fill="#ffffff" stroke="#1e293b" stroke-width="1.6" />
+    <text x="18" y="28" font-family="monospace" font-size="12.5" font-weight="bold" fill="#b45309">
+      GHI CHÚ KỸ THUẬT &amp; TIÊU CHUẨN NGHIỆM THU:
+    </text>
+    <g font-family="monospace" font-size="11" fill="#1e293b">
+      <text x="18" y="56">1. Toàn bộ kích thước trên bản vẽ tính bằng milimét (mm).</text>
+      <text x="18" y="82">2. Dung sai cắt Laser / Đột CNC kim loại tấm: ±0.10 mm.</text>
+      <text x="18" y="108">3. Bề mặt Inox SUS304 mạ PVD vàng gương bọc màng PVC bảo vệ 2 lớp.</text>
+      <text x="18" y="134">4. Khung cơ khí chịu lực SS400 hàn CO2 liên tục, sơn chống gỉ Epoxy 2 lớp.</text>
+      <text x="18" y="160">5. Kiểm tra lắp thử 3D không va chạm trước khi xuất xưởng.</text>
+      <text x="18" y="186">6. Áp dụng tiêu chuẩn an toàn thang máy TCVN 6396-20:2017 / EN 81-20.</text>
+      <text x="18" y="220" font-weight="bold" fill="#0f172a">TRẠNG THÁI HỒ SƠ: ĐÃ PHÊ DUYỆT XUẤT XƯỞNG (APPROVED FOR CNC)</text>
+      <text x="18" y="246" fill="#047857" font-weight="bold">✔ ĐÃ ĐỐI CHIẾU KHỚP 100% VỚI MÔ HÌNH 3D SOLIDWORKS</text>
+    </g>
+  </g>
+
+  <!-- ==================== KHUNG TÊN BẢN VẼ CHUẨN ISO (BOTTOM-RIGHT) ==================== -->
+  <g transform="translate(1020, 790)">
+    <rect x="0" y="0" width="548" height="178" fill="#ffffff" stroke="#0f172a" stroke-width="2.2" />
+    <line x1="0" y1="46" x2="548" y2="46" stroke="#0f172a" stroke-width="1.4" />
+    <line x1="0" y1="96" x2="548" y2="96" stroke="#0f172a" stroke-width="1.4" />
+    <line x1="0" y1="138" x2="548" y2="138" stroke="#0f172a" stroke-width="1.4" />
+    <line x1="340" y1="0" x2="340" y2="178" stroke="#0f172a" stroke-width="1.4" />
+
+    <text x="16" y="29" font-family="monospace" font-size="14" font-weight="bold" fill="#0f172a">ĐƠN VỊ THIẾT KẾ: PLANITUP STUDIO</text>
+    <text x="354" y="29" font-family="monospace" font-size="12" font-weight="bold" fill="#b45309">HOTLINE: 0345.658.936</text>
+
+    <text x="16" y="68" font-family="monospace" font-size="11" fill="#475569">HẠNG MỤC BẢN VẼ:</text>
+    <text x="16" y="87" font-family="monospace" font-size="12.5" font-weight="bold" fill="#0f172a">KẾT CẤU &amp; CABIN THANG MÁY KÍNH 630KG</text>
+    <text x="354" y="68" font-family="monospace" font-size="11" fill="#475569">PHẦN MỀM GỐC:</text>
+    <text x="354" y="87" font-family="monospace" font-size="12" font-weight="bold" fill="#0f172a">SOLIDWORKS / AUTOCAD</text>
+
+    <text x="16" y="122" font-family="monospace" font-size="11.5" fill="#1e293b">TỶ LỆ: <tspan font-weight="bold">1:15 / 1:2</tspan>   |   KHỔ GIẤY: <tspan font-weight="bold">A1</tspan></text>
+    <text x="354" y="122" font-family="monospace" font-size="12" font-weight="bold" fill="#0f172a">TỜ SỐ: 01 / 02</text>
+
+    <text x="16" y="163" font-family="monospace" font-size="12" font-weight="bold" fill="#0f172a">MÃ BẢN VẼ: DWG-ELV-630KG-R04</text>
+    <text x="354" y="163" font-family="monospace" font-size="12" font-weight="bold" fill="#047857">REV.04 — NĂM 2026</text>
+  </g>
+</svg>

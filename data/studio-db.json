@@ -1,0 +1,345 @@
+{
+  "categories": [
+    "Thang máy",
+    "Đường ống nhà máy",
+    "Thiết bị công nghiệp",
+    "Nhà ở & Nội thất",
+    "Dựng mẫu 2D/3D",
+    "Dự án khác"
+  ],
+  "projects": [
+    {
+      "id": "proj-villa-01",
+      "title": "Phối cảnh Không gian Nội thất Biệt thự Phố Tích hợp Thang máy Gia đình",
+      "categories": [
+        "Nhà ở & Nội thất",
+        "Thang máy",
+        "Dựng mẫu 2D/3D"
+      ],
+      "clientType": "Chủ đầu tư Cá nhân / Đối tác Kiến trúc",
+      "year": "2026",
+      "duration": "14 ngày",
+      "software": [
+        "3ds Max",
+        "SketchUp",
+        "AutoCAD"
+      ],
+      "deliverables": [
+        "Bản vẽ bố trí mặt bằng công năng 2D các tầng",
+        "Bộ ảnh phối cảnh 3D ánh sáng thực tế toàn bộ phòng khách - bếp",
+        "Hồ sơ kỹ thuật đóng đồ nội thất gỗ & thiết kế đồng bộ vách thang máy"
+      ],
+      "image": "/images/villa-interior.jpg",
+      "cadSheets": [
+        {
+          "id": "sh-vil-01",
+          "title": "Tờ KT-01: Mặt bằng nội thất đồng bộ trục thang máy kính",
+          "url": "/cad-samples/ban-ve-kien-truc-thang-gia-dinh.svg"
+        }
+      ],
+      "summary": "Thiết kế đồng bộ không gian sống hiện đại, kết hợp hài hòa trục thang máy kính giữa lòng cầu thang với hệ tủ kệ gỗ óc chó và ánh sáng kiến trúc.",
+      "challenge": "Chủ nhà muốn đưa thang máy kính vào trung tâm phòng khách nhưng lo ngại cảm giác thô cứng của thiết bị cơ khí phá vỡ sự ấm cúng của ngôi nhà.",
+      "solution": "Phối hợp chặt chẽ giữa kỹ sư thang máy và kiến trúc sư nội thất của Studio để đồng bộ màu khung thép, ốp gỗ vách sảnh tầng và hệ đèn trang trí liền mạch từ A–Z.",
+      "featured": true
+    },
+    {
+      "id": "proj-other-01",
+      "title": "Thiết kế Kiểu dáng Vỏ Thiết bị Chuyên dụng & Khung Trưng bày Triển lãm",
+      "categories": [
+        "Dự án khác",
+        "Dựng mẫu 2D/3D"
+      ],
+      "clientType": "Doanh nghiệp Thương mại & Sản xuất",
+      "year": "2026",
+      "duration": "05 ngày",
+      "software": [
+        "SolidWorks",
+        "3ds Max",
+        "AutoCAD"
+      ],
+      "deliverables": [
+        "Mô hình 3D kiểu dáng công nghiệp & phối cảnh nhận diện",
+        "Bản vẽ gia công kim loại tấm, mica & kết cấu tháo lắp nhanh",
+        "Bảng kê quy cách vật tư hoàn thiện"
+      ],
+      "image": "/images/machinery-cad.jpg",
+      "summary": "Thiết kế trọn gói kiểu dáng vỏ máy và quầy kệ trưng bày tháo lắp thông minh theo đề bài đặc thù riêng của doanh nghiệp.",
+      "challenge": "Sản phẩm mới chưa có mẫu chuẩn trên thị trường, cần vừa đảm bảo tính thẩm mỹ thương hiệu vừa tháo lắp gọn khi vận chuyển đi triển lãm.",
+      "solution": "Kết hợp dựng hình 3D kiểu dáng công nghiệp và thiết kế ngàm liên kết giấu vít thông minh, giúp lắp dựng hoàn chỉnh chỉ trong 30 phút.",
+      "featured": false
+    },
+    {
+      "id": "proj-elevator-01",
+      "title": "Thiết kế Kết cấu & Cabin Thang máy Kính Panorama Tải trọng 630kg",
+      "categories": [
+        "Thang máy",
+        "Dựng mẫu 2D/3D"
+      ],
+      "clientType": "Đơn vị Sản xuất & Lắp đặt Thang máy",
+      "year": "2026",
+      "duration": "07 ngày",
+      "software": [
+        "SolidWorks",
+        "AutoCAD",
+        "3ds Max"
+      ],
+      "deliverables": [
+        "Mô hình 3D lắp ghép tổng thể (.SLDASM / .STEP)",
+        "Bản vẽ trải phẳng tôn chấn đột CNC (.DWG / .DXF)",
+        "Bảng kê vật tư cơ khí (BOM) & Hồ sơ lắp đặt hố thang",
+        "Ảnh Render 3D phối cảnh trình chủ đầu tư"
+      ],
+      "image": "/images/elevator-clean-3d.jpg",
+      "cadSheets": [
+        {
+          "id": "sh-elv-01",
+          "title": "Tờ 01: Mặt bằng hố thang & Mặt cắt đứng Cabin",
+          "url": "/cad-samples/ban-ve-thang-may-tong-the.svg"
+        },
+        {
+          "id": "sh-elv-02",
+          "title": "Tờ 02: Bản vẽ trải phẳng tôn chấn đột CNC (.DXF)",
+          "url": "/cad-samples/ban-ve-trai-ton-cnc-cabin.svg"
+        }
+      ],
+      "summary": "Thiết kế đồng bộ khung cơ khí chịu lực và vách kính cường lực mạ PVD vàng đồng cho dòng thang máy quan sát cao cấp.",
+      "challenge": "Hố thang thực tế có kích thước phi tiêu chuẩn, yêu cầu tối ưu chiều cao OH/PIT nhưng vẫn đảm bảo thẩm mỹ sang trọng không lộ bulông liên kết.",
+      "solution": "Dựng mô hình 3D tham số hóa trên SolidWorks giúp kiểm soát va chạm cơ khí chính xác đến 0.1mm, giấu toàn bộ hệ gân tăng cứng và đèn LED hắt trần vào khung inox chấn gấp CNC.",
+      "featured": true
+    },
+    {
+      "id": "proj-piping-01",
+      "title": "Thiết kế Hệ thống Tuyến ống Công nghệ (Piping) Trạm Bơm & Trao đổi Nhiệt",
+      "categories": [
+        "Đường ống nhà máy",
+        "Thiết bị công nghiệp"
+      ],
+      "clientType": "Nhà thầu Cơ điện & Công nghiệp (M&E / EPC)",
+      "year": "2026",
+      "duration": "12 ngày",
+      "software": [
+        "AutoCAD Plant 3D",
+        "SolidWorks",
+        "Navisworks"
+      ],
+      "deliverables": [
+        "Sơ đồ nguyên lý P&ID & Layout mặt bằng định tuyến ống",
+        "Mô hình 3D toàn trạm kiểm tra xung đột (Clash Detection)",
+        "Bản vẽ Isometric từng tuyến ống phục vụ gia công tại xưởng",
+        "Bảng bóc tách khối lượng ống, van, mặt bích, giá đỡ (MTO/BOM)"
+      ],
+      "image": "/images/industrial-piping.jpg",
+      "cadSheets": [
+        {
+          "id": "sh-pip-01",
+          "title": "Tờ 01: Bản vẽ Isometric Tuyến ống DN150 & Bảng MTO",
+          "url": "/cad-samples/ban-ve-isometric-duong-ong.svg"
+        }
+      ],
+      "summary": "Quy hoạch tuyến ống inox vi sinh và đường ống hơi áp lực cao trong không gian phòng máy hẹp, tối ưu lối vận hành bảo trì.",
+      "challenge": "Mật độ thiết bị bồn bể dày đặc, nhiều đường ống giao cắt phức tạp dễ xảy ra va chạm với dầm kết cấu và máng cáp điện khi ra công trường.",
+      "solution": "Triển khai mô hình 3D trực quan theo chuẩn ASME, bố trí cụm van vận hành vừa tầm đứng công nhân, xuất tự động bản vẽ Isometric giúp đội thi công cắt hàn chính xác 100% ngay từ xưởng.",
+      "featured": true
+    },
+    {
+      "id": "proj-machine-01",
+      "title": "Thiết kế Cụm Băng tải Cấp phôi & Khung Máy Đóng gói Tự động",
+      "categories": [
+        "Thiết bị công nghiệp",
+        "Dựng mẫu 2D/3D"
+      ],
+      "clientType": "Xưởng Chế tạo Máy Công nghiệp",
+      "year": "2026",
+      "duration": "09 ngày",
+      "software": [
+        "Autodesk Inventor",
+        "SolidWorks",
+        "AutoCAD"
+      ],
+      "deliverables": [
+        "File 3D cụm lắp ghép hoàn chỉnh & Mô phỏng chuyển động",
+        "Bản vẽ chi tiết gia công phay/tiện CNC & cắt Laser",
+        "Danh mục linh kiện tiêu chuẩn (vòng bi, động cơ, khí nén)"
+      ],
+      "image": "/images/machinery-cad.jpg",
+      "cadSheets": [
+        {
+          "id": "sh-mac-01",
+          "title": "Tờ 01: Bản vẽ khai triển chi tiết kim loại tấm CNC",
+          "url": "/cad-samples/ban-ve-trai-ton-cnc-cabin.svg"
+        }
+      ],
+      "summary": "Thiết kế cải tiến cụm cơ cấu cấp phôi tự động từ mẫu máy ngoại nhập, tối ưu kết cấu để gia công thuận lợi bằng vật tư sẵn có trong nước.",
+      "challenge": "Khách hàng chỉ có hình ảnh/video máy mẫu và thông số đầu ra mong muốn, cần dựng lại toàn bộ kết cấu cơ khí đảm bảo độ cứng vững khi chạy liên tục 3 ca.",
+      "solution": "Phân tích nguyên lý truyền động, dựng hình 3D chi tiết từng cụm gá lắp, tiêu chuẩn hóa các chi tiết ghép nối để giảm 25% chi phí gia công cơ khí cho xưởng.",
+      "featured": true
+    },
+    {
+      "id": "proj-elevator-02",
+      "title": "Thiết kế Khung Cơ khí & Đối trọng Thang máy Tải hàng 2000kg Nhà xưởng",
+      "categories": [
+        "Thang máy",
+        "Thiết bị công nghiệp"
+      ],
+      "clientType": "Nhà máy Sản xuất Bao bì Công nghiệp",
+      "year": "2026",
+      "duration": "10 ngày",
+      "software": [
+        "SolidWorks",
+        "AutoCAD Mechanical"
+      ],
+      "deliverables": [
+        "Bản vẽ kết cấu khung treo chịu tải nặng & dầm bệ máy",
+        "Bản vẽ trải tôn sàn cabin gân chống trượt CNC",
+        "Bảng tính kiểm bền cơ khí & Bóc tách vật tư thép hình"
+      ],
+      "image": "/images/elevator-clean-3d.jpg",
+      "cadSheets": [
+        {
+          "id": "sh-elv2-01",
+          "title": "Tờ 01: Kết cấu hố thang & khung chịu lực",
+          "url": "/cad-samples/ban-ve-thang-may-tong-the.svg"
+        }
+      ],
+      "summary": "Thiết kế hệ khung cabin và cửa mở tim 4 cánh chịu va đập xe nâng tay cho dây chuyền kho vận nhà máy.",
+      "challenge": "Tải trọng lệch tâm lớn khi xe nâng đi vào sàn cabin, yêu cầu kết cấu ray dẫn hướng và khung gầm siêu cứng vững.",
+      "solution": "Gia cường hệ dầm đáy thép U tổ hợp và mô phỏng ứng suất tải động trên SolidWorks trước khi xuất bản vẽ gia công.",
+      "featured": false
+    },
+    {
+      "id": "proj-piping-02",
+      "title": "Định tuyến Hệ thống Đường ống Hơi Nóng & Khí Nén Nhà máy Dược phẩm",
+      "categories": [
+        "Đường ống nhà máy"
+      ],
+      "clientType": "Đơn vị Thi công Cơ điện Phòng sạch",
+      "year": "2025",
+      "duration": "11 ngày",
+      "software": [
+        "AutoCAD Plant 3D",
+        "Navisworks"
+      ],
+      "deliverables": [
+        "Layout 3D tổng thể tuyến ống trần kỹ thuật phòng sạch",
+        "Bản vẽ Isometric chi tiết từng nhánh ống & cao độ giá đỡ",
+        "Danh mục tổng hợp vật tư van, bẫy hơi, bảo ôn (MTO)"
+      ],
+      "image": "/images/industrial-piping.jpg",
+      "cadSheets": [
+        {
+          "id": "sh-pip2-01",
+          "title": "Tờ 01: Isometric tuyến ống hơi nóng & MTO",
+          "url": "/cad-samples/ban-ve-isometric-duong-ong.svg"
+        }
+      ],
+      "summary": "Bố trí đồng bộ mạng lưới ống inox vi sinh và ống hơi nóng trên tầng kỹ thuật hẹp không va chạm hệ thống ống gió HVAC.",
+      "challenge": "Chiều cao trần kỹ thuật chỉ 900mm nhưng phải đi song song cả ống gió, máng điện và 6 tuyến ống công nghệ có độ dốc thoát nước ngưng.",
+      "solution": "Phối hợp mô hình 3D đa bộ môn, tối ưu hệ giá đỡ tổ hợp dùng chung giúp tiết kiệm 20% diện tích lắp đặt và rút ngắn tiến độ công trường.",
+      "featured": false
+    },
+    {
+      "id": "proj-machine-02",
+      "title": "Số hóa Bản vẽ 2D/3D Cụm Bồn Khuấy Giải Nhiệt & Sàn Thao Tác Inox",
+      "categories": [
+        "Thiết bị công nghiệp",
+        "Dựng mẫu 2D/3D"
+      ],
+      "clientType": "Xưởng Gia công Bồn bể Công nghiệp",
+      "year": "2025",
+      "duration": "06 ngày",
+      "software": [
+        "SolidWorks",
+        "AutoCAD"
+      ],
+      "deliverables": [
+        "Mô hình 3D bồn khuấy hai lớp áo giải nhiệt & cụm cánh khuấy",
+        "Bản vẽ khai triển tôn lốc vỏ bồn, chỏm cầu & cầu thang sàn thao tác",
+        "Bảng kê quy cách mặt bích, ống chờ và bulông neo"
+      ],
+      "image": "/images/machinery-cad.jpg",
+      "summary": "Dựng mới hoàn chỉnh bộ hồ sơ chế tạo cụm bồn khuấy 5000L và sàn thao tác khung thép không gỉ từ thông số quy trình của khách.",
+      "challenge": "Cần xuất chính xác bản vẽ khai triển các lỗ mở xiên trên chỏm cầu để thợ hàn lắp ghép khớp ngay tại xưởng không phải cắt sửa.",
+      "solution": "Thiết kế 3D kim loại tấm chuẩn xác, xuất trực tiếp file cắt Laser (.DXF) toàn bộ chi tiết gá đỡ và tấm sàn.",
+      "featured": false
+    },
+    {
+      "id": "proj-villa-02",
+      "title": "Thiết kế Không gian Nội thất & Hệ Tủ Kệ May Đo Căn hộ Duplex",
+      "categories": [
+        "Nhà ở & Nội thất",
+        "Dựng mẫu 2D/3D"
+      ],
+      "clientType": "Chủ đầu tư Cá nhân",
+      "year": "2025",
+      "duration": "12 ngày",
+      "software": [
+        "3ds Max",
+        "SketchUp",
+        "AutoCAD"
+      ],
+      "deliverables": [
+        "Bản vẽ mặt bằng bố trí nội thất 2 tầng Duplex",
+        "Bộ ảnh phối cảnh 3D góc rộng không gian thông tầng",
+        "Hồ sơ kỹ thuật chi tiết kích thước đóng đồ gỗ & kim loại trang trí"
+      ],
+      "image": "/images/villa-interior.jpg",
+      "summary": "Triển khai phối cảnh 3D và bản vẽ sản xuất đồ nội thất rời theo phong cách tối giản ấm cúng cho căn hộ thông tầng.",
+      "challenge": "Không gian thông tầng cao 6m đòi hỏi tỷ lệ vách ốp, đèn thả và cầu thang phải cân xứng hài hòa ở mọi góc nhìn.",
+      "solution": "Dựng mô hình 3D tỷ lệ 1:1 toàn bộ căn hộ, tinh chỉnh vật liệu gỗ, đá tự nhiên và xuất bản vẽ bóc tách rõ ràng cho xưởng mộc thi công.",
+      "featured": false
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "cmp-elevator",
+      "label": "Thang máy Kính",
+      "cadImage": "/cad-samples/ban-ve-thang-may-tong-the.svg",
+      "renderImage": "/images/elevator-clean-3d.jpg",
+      "dwgCode": "DWG-ELV-630KG-R04",
+      "scale": "TỶ LỆ 1:15",
+      "dimensions": [
+        "Rộng: 1400 mm",
+        "Sâu: 1350 mm",
+        "Cao: 2450 mm",
+        "Tải: 630 kg"
+      ]
+    },
+    {
+      "id": "cmp-piping",
+      "label": "Đường ống Nhà máy",
+      "cadImage": "/cad-samples/ban-ve-isometric-duong-ong.svg",
+      "renderImage": "/images/industrial-piping.jpg",
+      "dwgCode": "ISO-PIP-ASME-B31.3",
+      "scale": "TỶ LỆ 1:25",
+      "dimensions": [
+        "Ống chính: DN150",
+        "Áp suất: PN16",
+        "Vật liệu: SUS316L",
+        "Xung đột: 0"
+      ]
+    },
+    {
+      "id": "cmp-villa",
+      "label": "Nội thất & Thang gia đình",
+      "cadImage": "/cad-samples/ban-ve-kien-truc-thang-gia-dinh.svg",
+      "renderImage": "/images/villa-interior.jpg",
+      "dwgCode": "ARC-VIL-INT-3D09",
+      "scale": "TỶ LỆ 1:50",
+      "dimensions": [
+        "Tim ngang: 7600 mm",
+        "Hố PIT: 450 mm",
+        "OH: 2900 mm",
+        "Đồng bộ: 100%"
+      ]
+    }
+  ],
+  "quotes": [],
+  "verifiedStats": {
+    "useLiveProjectCount": true,
+    "completedProjects": 9,
+    "partnersCount": 18,
+    "onTimeRate": 100,
+    "confidentialityRate": 100
+  },
+  "updatedAt": 1795401975568
+}
